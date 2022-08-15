@@ -27,6 +27,4 @@ A este punto se espera que usted ya tenga todas las herramientas ya mencionadas 
 ## 1. Despliegue de la base de datos Oracle con Docker
 El primer punto será montar una base de datos Oracle en un entorno contenerizado con Docker, para lo cual, hemos decidido tomar la imagen base https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g. Como nos indica en la pagina, lo primero que debemos hacer es abrir nuestra terminal de comandos y ejecutar el siguiente comando:
 
-```docker
-docker pull oracleinanutshell/oracle-xe-11g
-```
+`docker pull oracleinanutshell/oracle-xe-11g`
