@@ -30,8 +30,7 @@ El primer punto será montar una base de datos Oracle en un entorno contenerizad
 ```
 docker pull oracleinanutshell/oracle-xe-11g
 ```
-
-Una vez descargada la imagen, toca ejecutar el contenedor de esta imagen con el siguiente comando:
+Como podemos ver en el nombre, es una imagen que viene con una instalación de una base de datos oracle 11g. Una vez descargada la imagen, toca ejecutar el contenedor de esta imagen con el siguiente comando:
 
 ```
 docker run -d -p 1521:1521 oracleinanutshell/oracle-xe-11g
@@ -54,3 +53,10 @@ Iniciamos DBeaver y daremos click en el boton Nueva **Conexión**, el cual esta 
 8. Cliente: **Vacío**
 
 Antes de Aceptar, podemos probar nuestra conexión, dando click en el botón **'Probar Conexión'**. Una vez que la prueba sea exitósa, podemos dar click en aceptar y DBeaver se conectará a oracle y podremos navegar entre sus tablas que vienen configuradas en la instalación de la base de datos.
+
+## 3. Instalación del driver ojdbc en Maven
+Para el correcto funcionamiento del microservicio que queremos desarrollar, es necesario instalar el driver ojdbc.
+
+>### Nota
+>Debido a las restricciones de la licencia de Oracle, el controlador JDBC de Oracle no está disponible en el repositorio público de Maven. Para usar el controlador Oracle JDBC con Maven, debe descargarlo e instalarlo en su repositorio local de Maven manualmente.
+
