@@ -30,3 +30,16 @@ El primer punto será montar una base de datos Oracle en un entorno contenerizad
 ```
 docker pull oracleinanutshell/oracle-xe-11g
 ```
+
+Una vez descargada la imagen, toca ejecutar el contenedor de esta imagen con el siguiente comando:
+
+```
+docker run -d -p 1521:1521 oracleinanutshell/oracle-xe-11g
+```
+
+Debemos esperar unos segundos antes de comenzar a ocupar la base de datos, puesto que necesita iniciarce el servicio dentro del contenedor.
+
+# 2. Conectando con la base de datos con DBeaver
+Una vez ya tenemos nuestro Oracle en ejecución, haremos una prueba de conexión por medio de DBeaver, una herramienta cliente para conectarnos con distintas bases de datos.
+
+Iniciamos DBeaver 
