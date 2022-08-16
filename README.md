@@ -155,4 +155,11 @@ Como podemos observar en el archivo anterior, las dependencias usadas para nuest
 3. ojdbc7 (el cual instalamos en el punto 3 del ejercicio)
 4. spring-boot-starter-test
 
-Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn clean install`.
+Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn clean install`, el cual descargará las dependencias definidas para la aplicación.
+
+## 6. A desarrollar
+Este es el punto que nos gusta a los desarrolladores, escribir coódigo y que todo funcione, pues manos a la obra. Dividiremos nuestra aplicación en tres packages que definirán capas de lógica diferentes:
+
+1. entities: package con clases que representan las tablas en la base de datos
+2. repositories: package con clases que ejecutan consulas y acciones en la base de datos
+3. controllers:
