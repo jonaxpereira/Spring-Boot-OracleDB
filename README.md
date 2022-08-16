@@ -74,4 +74,15 @@ Con esto tendremos instalado la librería en nuestro repositorio local de Maven 
 >Para un ambiente que no es local, por ejemplo NPE (Not Production Environment), UAT (User Acceptance Testing) o PRD (Production), es necesario que esta librería sea instalada en donde se ejecutará la aplicación para que esta pueda obtener la libreria y usar sus componentes, como por ejemplo instalarla en la máquina virtual o si esta corriendo su aplicacion en un entorno de contenedores, añadir la librería a la imagen creada junto con su aplicación.
 
 ## 4. Creación del proyecto
-Como mencionamos en un principio plugins vscode
+Como mencionamos en la sección de prerequisitos, instalamos algunos plugins de Spring Boot en Visual Studio Code, los cuales nos permiten agilizar el desarrollo de nuestro microservicio.
+
+Ahora, en alguna carpeta que tengas definida para tus proyectos, abriremos esta con Visual Studio Code, posterior a esto usaremos la combinacion `Ctrl+Shift+p` para abrir la paleta de comandos de nuestro editor, y buscaremos el siguiente plugin: `Spring Initializr: Create a Maven project...`, el cual nos guiará por una serie de opciones para crear un nuevo proyecto de Spring Boot. Las opciones que utilizaremos para nuestro proyecto son las siguientes:
+
+1. Spring Boot version: 2.7.2
+2. Project Language: Java
+3. Group Id: com.example
+4. Artifact Id: oracle
+5. Packaging type: jar
+6. Java version: 11
+7. Dependencies: De las indicaremos mas adelante editando el archivo pom.xml
+
