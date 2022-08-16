@@ -12,7 +12,7 @@ Este ejercicio fue realizado sobre el sistema operativo Windows 11 y la instalac
 4. Maven [https://maven.apache.org/download.cgi]
 5. DBeaver [https://dbeaver.io/download/]
 
-Una vez instaladas estas herramientas, antes de empezar con el desarrollo, vamos a instalar algunos plugins de Visual Studio Code muy utiles que serán de mucha ayuda a lo largo del ejercicio:
+Una vez instaladas estas herramientas, antes de empezar con el desarrollo, vamos a instalar algunos plugins de Visual Studio Code muy utiles que serán de mucha ayuda a lo largo del ejercicio (el ejercicio no cubre la instalación de estas herramientas):
 
 1. Spring Initializr Java Support
 2. Spring Boot Dashboard
