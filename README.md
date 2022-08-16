@@ -88,5 +88,62 @@ Ahora, en alguna carpeta que tengas definida para tus proyectos, abriremos esta 
 
 Una vez terminado el proceso de seleccion de las configuraciones de nuestro proyecto, Visual Studio Code comenzara a crear nuestro proyecto de Spring Boot.
 
-## 5. Configuracion del proyecto
+>#### Nota
+>No es extraño que Visual Studio Code nos ofresca instalar plugins asociados a archivos de extension .java, de ser asi, es recomendable que las instalemos para que nuestra experiencia de desarrollo en dicho lenguaje sea mejor.
 
+## 5. Configuracion del proyecto
+Ahora comencemos con las configuraciones de nuestro proyecto, por lo que primera no dirigiremos al archivo pom.xml, el cual corresponde al archivo de definición de dependencias del proyecto.
+
+A continuacion se indica el archivo pom.xml con las dependencias que necesitaremos para nuestro proyecto:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.2</version>
+		<relativePath/>
+		<!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>oracle</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>oracle</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<version>12.1.0.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+```
