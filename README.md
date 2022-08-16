@@ -53,4 +53,4 @@ Iniciamos DBeaver y daremos click en el boton Nueva **Conexión**, el cual esta 
 7. Contraseña: oracle
 8. Cliente: **Vacío**
 
-Antes de Aceptar, podemos probar nuestra conexión, dando click en el botón `Probar Conexión`. Una vez que la prueba sea exitósa, podemos dar click en aceptar y DBeaver se conectará a oracle y podremos navegar entre sus tablas que vienen configuradas en la instalación de la base de datos.
+Antes de Aceptar, podemos probar nuestra conexión, dando click en el botón **'Probar Conexión'**. Una vez que la prueba sea exitósa, podemos dar click en aceptar y DBeaver se conectará a oracle y podremos navegar entre sus tablas que vienen configuradas en la instalación de la base de datos.
