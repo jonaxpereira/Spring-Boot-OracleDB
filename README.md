@@ -147,3 +147,12 @@ A continuacion se indica el archivo pom.xml con las dependencias que necesitarem
 	</build>
 </project>
 ```
+
+Como podemos observar en el archivo anterior, las dependencias usadas para nuestra aplicación son:
+
+1. spring-boot-starter-web
+2. spring-boot-starter-data-jpa
+3. ojdbc7 (el cual instalamos en el punto 3 del ejercicio)
+4. spring-boot-starter-test
+
+Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn clean install`.
