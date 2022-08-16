@@ -86,3 +86,7 @@ Ahora, en alguna carpeta que tengas definida para tus proyectos, abriremos esta 
 6. Java version: 11
 7. Dependencies: De las indicaremos mas adelante editando el archivo pom.xml
 
+Una vez terminado el proceso de seleccion de las configuraciones de nuestro proyecto, Visual Studio Code comenzara a crear nuestro proyecto de Spring Boot.
+
+## 5. Configuracion del proyecto
+
