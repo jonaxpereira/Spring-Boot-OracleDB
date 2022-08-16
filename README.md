@@ -39,7 +39,7 @@ docker run -d -p 1521:1521 oracleinanutshell/oracle-xe-11g
 
 Debemos esperar unos segundos antes de comenzar a ocupar la base de datos, puesto que necesita iniciarce el servicio dentro del contenedor.
 
-# 2. Conectando con la base de datos con DBeaver
+## 2. Conectando con la base de datos con DBeaver
 Una vez ya tenemos nuestro Oracle en ejecución, haremos una prueba de conexión por medio de DBeaver, una herramienta cliente para conectarnos con distintas bases de datos.
 
-Iniciamos DBeaver 
+Iniciamos DBeaver y daremos click en el boton '`Nueva Conexión`', el cual esta representado por el simbolo de un '`enchufe`' con un simbolo '`+`'. Posterior a esto, se desplegará una ventana en donde debemos seleccionar la base de datos a la cual queremos conectarnos, en este caso, `Oracle`. Si es la primera vez que está usando DBeaver, es probable que se instalen algunos drivers que el software necesita para poder comunicarse con la base de datos.
