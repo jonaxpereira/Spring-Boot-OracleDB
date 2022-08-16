@@ -57,6 +57,20 @@ Antes de Aceptar, podemos probar nuestra conexión, dando click en el botón **'
 ## 3. Instalación del driver ojdbc en Maven
 Para el correcto funcionamiento del microservicio que queremos desarrollar, es necesario instalar el driver ojdbc.
 
->### Nota
+>#### Nota
 >Debido a las restricciones de la licencia de Oracle, el controlador JDBC de Oracle no está disponible en el repositorio público de Maven. Para usar el controlador Oracle JDBC con Maven, debe descargarlo e instalarlo en su repositorio local de Maven manualmente.
 
+Nos dirigiREMOS a maven y encontraremos que existe una definición para importar la librería en nuestro proyecto de java [https://mvnrepository.com/artifact/com.oracle/ojdbc7/12.1.0.2], pero la librería está alojada en otro repositorio, asi que hay que descargarla dando click en el botón **jar (3.5 MB)**.
+
+Una vez descargada la librería, debemos abrir la terminal y ejecutar el siguiente comando:
+
+``` 
+mvn install:install-file -Dfile="<ubicación>\ojdbc7-12.1.0.2.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0.2" -Dpackaging="jar"
+```
+
+Con esto tendremos instalado la librería en nuestro repositorio local de Maven y podremos importarlo a nuestro proyecto.
+
+>#### Nota
+>Para un ambiente que no es local, por ejemplo NPE (Not Production Environment), UAT (User Acceptance Testing) o PRD (Production), es necesario que esta librería sea instalada en donde se ejecutará la aplicación para que esta pueda obtener la libreria y usar sus componentes, como por ejemplo instalarla en la máquina virtual o si esta corriendo su aplicacion en un entorno de contenedores, añadir la librería a la imagen creada junto con su aplicación.
+
+## 4. Creación del proyecto
