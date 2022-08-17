@@ -92,9 +92,9 @@ Una vez terminado el proceso de seleccion de las configuraciones de nuestro proy
 >No es extraño que Visual Studio Code nos ofresca instalar plugins asociados a archivos de extension .java, de ser asi, es recomendable que las instalemos para que nuestra experiencia de desarrollo en dicho lenguaje sea mejor.
 
 ## 5. Configuracion del proyecto
-Ahora comencemos con las configuraciones de nuestro proyecto, por lo que primera no dirigiremos al archivo pom.xml, el cual corresponde al archivo de definición de dependencias del proyecto.
+Ahora comencemos con las configuraciones de nuestro proyecto, por lo que primero no dirigiremos al archivo pom.xml, el cual corresponde al archivo de definición de dependencias del proyecto.
 
-A continuacion se indica el archivo pom.xml con las dependencias que necesitaremos para nuestro proyecto:
+A continuacion se indica el archivo pom.xml con las dependencias necesarias para nuestra aplicación:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -155,7 +155,25 @@ Como podemos observar en el archivo anterior, las dependencias usadas para nuest
 3. ojdbc7 (el cual instalamos en el punto 3 del ejercicio)
 4. spring-boot-starter-test
 
-Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn clean install`, el cual descargará las dependencias definidas para la aplicación.
+Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn install`, el cual descargará las dependencias definidas para la aplicación.
+
+Ahora, configuraremos el archivo de propiedades del proyecto, el cual configura algunas propiedades del mismo framework de spring y las dependencias que incluimos en la aplicación. ste archivo suele llamarse `application.properties` o `bootstrap.yaml`, y suele ubicarse en la ruta `/src/main/resources`.
+
+Los parámetros de configuración de nuestro servicio serán los siguientes:
+
+spring.main.banner-mode=off
+
+```properties
+# create tables and sequences, loads import.sql file
+spring.jpa.hibernate.ddl-auto=create
+
+# Oracle settings
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=system
+spring.datasource.password=oracle
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+```
 
 ## 6. A desarrollar
 Este es el punto que nos gusta a los desarrolladores, escribir coódigo y que todo funcione, pues manos a la obra. Dividiremos nuestra aplicación en tres packages que definirán capas de lógica diferentes:
@@ -219,6 +237,7 @@ public class Customer {
     public void setDate(Date date) {
         this.date = date;
     }
+
 }
 ```
 
@@ -269,3 +288,5 @@ public class CustomerController {
     
 }
 ```
+
+Como podemos observar, creamos una **entidad** que representa nuestra tabla en base de datos, un **repositorio** que ejecuta las consultas de los datos y el **controlador** que expondrá nuestro servicio de Clientes por medio de una API Rest.
