@@ -162,4 +162,110 @@ Este es el punto que nos gusta a los desarrolladores, escribir coódigo y que to
 
 1. entities: package con clases que representan las tablas en la base de datos
 2. repositories: package con clases que ejecutan consulas y acciones en la base de datos
-3. controllers:
+3. controllers: package con clases que representan los endpoints de nuestro servicio
+
+A partir de esta definición, enfocaremos nuestra aplicación a la exposición de datos de clientes.A continuación se muestran las tres clases de java (una por cada capa) que conforman nuestro microservicio:
+
+### Customer.java (Entity)
+```java
+package com.example.oracle.entities;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+    @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
+    private Long id;
+
+    private String name;
+
+    private String email;
+
+    @Column(name = "CREATED_DATE")
+    private Date date;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+}
+```
+
+### CustomerRepository.java (Repository)
+
+```java
+package com.example.oracle.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.oracle.entities.Customer;
+
+@Repository
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
+
+}
+```
+
+### CustomerController.java (Controller)
+
+```java
+package com.example.oracle.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.oracle.entities.Customer;
+import com.example.oracle.repositories.CustomerRepository;
+
+@RestController
+public class CustomerController {
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @GetMapping("/customers")
+    public Iterable<Customer> getAll() {
+        return customerRepository.findAll();
+    }
+
+    @GetMapping(value = "/customers/{id}")
+    public Customer findCustomerById(@PathVariable(name = "id") Long id) {
+        return customerRepository.findById(id).orElse(null);
+    }
+    
+}
+```
