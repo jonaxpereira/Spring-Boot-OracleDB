@@ -157,7 +157,7 @@ Como podemos observar en el archivo anterior, las dependencias usadas para nuest
 
 Una vez modificado el archivo pom.xml, abriremos la terminal del sistema (puede ser la terminal integrada de Visual Studio Code), y ejecutaremos el comando ``mvn install`, el cual descargará las dependencias definidas para la aplicación.
 
-Ahora, configuraremos el archivo de propiedades del proyecto, el cual configura algunas propiedades del mismo framework de spring y las dependencias que incluimos en la aplicación. ste archivo suele llamarse `application.properties` o `bootstrap.yaml`, y suele ubicarse en la ruta `/src/main/resources`.
+Ahora, configuraremos el archivo de propiedades del proyecto, el cual configura algunas propiedades del mismo framework de spring y las dependencias que incluimos en la aplicación. Este archivo suele llamarse `application.properties` o `bootstrap.yaml`, y suele ubicarse en la ruta `/src/main/resources`.
 
 Los parámetros de configuración de nuestro servicio serán los siguientes:
 
@@ -174,6 +174,13 @@ spring.datasource.password=oracle
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
 ```
+Una de las características que nos brinda JPA es que podemos ejecutar un script inicial hacia la base de datos, por medio de un archivo llamado `import.sql` ubicado en la ruta `/src/main/resources`, y por medio del parámetro `spring.jpa.hibernate.ddl-auto=create` en el archivo `application.properties`, ejecutará el código escrito dentro de este archivo. Hay que tener mucho cuidado con el valor de esta propiedad, ya que si se manipula de forma inadecuada, podriamos tener un evento no deseado en nuestra base de datos:
+
+* spring.jpa.hibernate.ddl-auto=none (no ejecuta nada hacia la base de datos)
+* spring.jpa.hibernate.ddl-auto=create (crea las tablas en base a nuestras entities)
+* spring.jpa.hibernate.ddl-auto=create-drop (crea las tablas en base a nuestras entities y las elimina cuando finaliza el proceso de nuestro servicio)
+* spring.jpa.hibernate.ddl-auto=update ()
+* spring.jpa.hibernate.ddl-auto=validate ()
 
 ## 6. A desarrollar
 Este es el punto que nos gusta a los desarrolladores, escribir coódigo y que todo funcione, pues manos a la obra. Dividiremos nuestra aplicación en tres packages que definirán capas de lógica diferentes:
