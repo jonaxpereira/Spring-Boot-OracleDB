@@ -297,3 +297,36 @@ public class CustomerController {
 ```
 
 Como podemos observar, creamos una **entidad** que representa nuestra tabla en base de datos, un **repositorio** que ejecuta las consultas de los datos y el **controlador** que expondrá nuestro servicio de Clientes por medio de una API Rest.
+
+## 7. El despliegue
+Ahora que ya tenemos nuestra aplicación lista, solo nos queda ejecutarla en nuestro equipo, por lo cual, por medio de la interfaz de linea de comandos, nos dirigiremos a la ruta raíz del proyecto, al mismo nivel en que se encuentra el archivo `pom.xml`, y ejecutaremos el comando `mvn spring-boot:run`, el cual iniciará la ejecución de nuestro microservicio en nuestro host.
+
+## 8. La prueba final
+Ahora que tenemos nuestro servicio en ejecución, abriremos el navegador web que tengamos instalado y nos dirigiremos a la ruta `http://localhost:8080/customers`, la cual nos entregará como respuesta un archivo json desplegado por el navegador como respuesta de nuestra API Rest:
+
+```json
+[
+    {
+        "id": 1,
+        "name": "mkyong",
+        "email": "111@yahoo.com",
+        "date": "2017-02-11T03:00:00.000+00:00"
+    },
+    {
+        "id": 2,
+        "name": "yflow",
+        "email": "222@yahoo.com",
+        "date": "2017-02-12T03:00:00.000+00:00"
+    },
+    {
+        "id": 3,
+        "name": "zilap",
+        "email": "333@yahoo.com",
+        "date": "2017-02-13T03:00:00.000+00:00"
+    }
+]
+```
+
+Felicidades si llegaste hasta aquí, ahora tienes los conocimientos necesarios para ejecutar un entorno de desarrollo con java y base de datos Oracle, y que mejor que no instalar la base de datos en nuestro propio equipo, sino montarlo desde un contenedor efímero que puede eliminarse y recrearse las veces que nosotros queramos.
+
+Buena suerte para lo que siga en tu camino :)
