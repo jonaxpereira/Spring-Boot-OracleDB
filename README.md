@@ -49,6 +49,8 @@ Iniciamos DBeaver y daremos click en el boton Nueva **Conexión**, el cual esta 
 7. Contraseña: oracle
 8. Cliente: **Vacío**
 
+Adicional a la configuración anterior, nos dirigiremos a la pestaña de **Oracle properties** y en la sección de **Content** habilitaremos la opción de ``Show only connected user schema`` para así poder ver las tablas del usuario con el que iniciaremos sesión.
+
 Antes de Aceptar, podemos probar nuestra conexión, dando click en el botón **'Probar Conexión'**. Una vez que la prueba sea exitósa, podemos dar click en aceptar y DBeaver se conectará a oracle y podremos navegar entre sus tablas que vienen configuradas en la instalación de la base de datos.
 
 ## 3. Instalación del driver ojdbc en Maven
