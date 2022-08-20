@@ -59,10 +59,10 @@ Para el correcto funcionamiento del microservicio que queremos desarrollar, es n
 
 Nos dirigiremos a maven y encontraremos que existe una definición para importar la librería en nuestro proyecto de java [https://mvnrepository.com/artifact/com.oracle/ojdbc7/12.1.0.2], pero la librería está alojada en otro repositorio, asi que hay que descargarla dando click en el botón **jar (3.5 MB)**.
 
-Una vez descargada la librería, debemos abrir la terminal y ejecutar el siguiente comando:
+Una vez descargada la librería, debemos abrir la terminal (desde cualquier ruta) y ejecutar el siguiente comando:
 
 ``` 
-mvn install:install-file -Dfile="<ubicación>\ojdbc7-12.1.0.2.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0.2" -Dpackaging="jar"
+mvn install:install-file -Dfile="<<ubicación_archivo>>>\ojdbc7-12.1.0.2.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0.2" -Dpackaging="jar"
 ```
 
 Con esto tendremos instalado la librería en nuestro repositorio local de Maven y podremos importarlo a nuestro proyecto.
