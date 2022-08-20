@@ -1,5 +1,4 @@
-# spring.boot.orace.db.container.setup.local.environment
-Local environment to develop spring boot microservice connecting to oracle database container running in docker
+# Desarrollo de aplicación Spring Boot con conexión a base de datos Oracle
 
 En este ejercicio vamos a configurar un ambiente local y desarrollaremos un microservicio en spring boot para conectarnos a una base de datos oracle, la cual estara montada en nuestro mismo host pero en un entorno de Docker.
 
